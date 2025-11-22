@@ -3,11 +3,14 @@ const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
 
-// routes
-const indexRouter = require("../routes/index");
-const fishRouter = require("../routes/fish");
+let mongoose = require('mongoose');
+let DB = require('./db');
 
-const app = express();
+// routes
+let indexRouter = require("../routes/index");
+let fishRouter = require("../routes/fish");
+
+let app = express();
 
 // view engines
 app.set("views", path.join(__dirname, "../views"));
@@ -24,6 +27,8 @@ app.use(express.json());
 
 // use routes
 app.use("/", indexRouter);
-app.use("/fish", fishRouter);
+app.use("/fishs", fishRouter);
+
+
 
 module.exports = app;

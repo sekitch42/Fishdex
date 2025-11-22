@@ -17,14 +17,14 @@ router.get('/', async (req, res, next) => {
   try {
     const FishList = await Fish.find();
 
-    res.render('Fish/list', {
-      title: 'Fish',
+    res.render('Fishs/list', {
+      title: 'Fissh',
       FishList: FishList
     })
 
   } catch (err) {
     console.error(err);
-    res.render('Fish/list',{
+    res.render('Fishs/list',{
       error:'Error on server'
     })
   }
@@ -33,14 +33,14 @@ router.get('/', async (req, res, next) => {
 // get route for displaying add page- create operation
 router.get('/add',async(req,res,next)=>{
   try{
-    res.render('Fish/add',{
+    res.render('Fishs/add',{
       title:'Add Fish'
     });
   }
   catch (err) 
   {
     console.error(err);
-    res.render('Fish/list',{
+    res.render('Fishs/list',{
       error:'Error on server'
     })
   }
@@ -49,21 +49,21 @@ router.get('/add',async(req,res,next)=>{
 router.post('/add',async(req,res,next)=>{
   try{
     let newFish = Fish({
-      "fishName":req.body.fishrName,
+      "fishName":req.body.fishName,
       "location":req.body.location,
       "bait":req.body.bait,
       "time":req.body.time,
       "caught":req.body.caught,
     });
     Fish.create(newFish).then(()=>{
-      res.redirect('/fish')
+      res.redirect('/fishs')
     })
    
   }
   catch (err) 
   {
     console.error(err);
-    res.render('Fish/list',{
+    res.render('Fishs/list',{
       error:'Error on server'
     })
   }
@@ -73,8 +73,8 @@ router.get('/edit/:id',async(req,res,next)=>{
   try
   {
     const id = req.params.id;
-    const fishToEdit = await Character.findById(id);
-    res.render("Fish/edit",
+    const fishToEdit = await Fish.findById(id);
+    res.render("Fishs/edit",
       {
         title: 'Edit Fish',
         Fish: fishToEdit
@@ -100,7 +100,7 @@ router.post('/edit/:id',async(req,res,next)=>{
       "caught": req.body.caught,
     })
     Fish.findByIdAndUpdate(id,updateFish).then(()=>{
-      res.redirect("/fish")
+      res.redirect("/fishs")
     })
   }
   catch(err)
@@ -111,8 +111,19 @@ router.post('/edit/:id',async(req,res,next)=>{
 })
 // get route for performing delete operation- delete operation
 router.get('/delete/:id',async(req,res,next)=>{
+  try{
+    let id = req.params.id;
+    Fish.deleteOne({_id:id}).then(()=>{
+      res.redirect("/fishs")
+    })
+  }
+  catch(err)
+  {
+    console.log(err);
+    next(err);
+  }
 
-})
+});
 
-
+// exports router for server.js
 module.exports = router;

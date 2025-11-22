@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+let express = require('express');
+let router = express.Router();
 
 
 // get home page
@@ -12,10 +12,7 @@ router.get('/home', function(req, res, next) {
   res.render('index', { title: 'Home' });
 });
 
-// get fish page
-router.get('/fish', function(req, res, next) {
-  res.render('index', { title: 'Fish' });
-});
+
 
 /* placeholders for future // get about page
 router.get('/about', function(req, res, next) {

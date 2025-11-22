@@ -1,5 +1,5 @@
-<!--<%- include ../partials/header.ejs %>
-<%- include ../partials/main_nav.ejs %> -->
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %> 
 <!-- content for adding fish -->
 <div class="container">
   <div class="row">
@@ -8,18 +8,18 @@
 
       <form class="form" method="post">
         <div class="form-group">
-          <label for="characterNameTextField">Fish</label>
+          <label for="fishNameTextField">Fish</label>
           <input type="text" class="form-control"
-          id="characterNameTextField"
+          id="fishNameTextField"
           placeholder="Fish"
           name="fishName" required>
         </div>
         <div class="form-group">
-          <label for="classLevelTextField">Location</label>
+          <label for="locationTextField">Location</label>
           <input type="text" class="form-control"
-          id="classLevelTextField"
+          id="locationTextField"
           placeholder="Location"
-          name="classLevel" required>
+          name="location" required>
         </div>
         <div class="form-group">
           <label for="baitTextField">Bait</label>
@@ -29,7 +29,7 @@
           name="bait" required>
         </div>
         <div class="form-group">
-          <label for="raceTextField">Time</label>
+          <label for="timeTextField">Time</label>
           <input type="text" class="form-control"
           id="timeTextField"
           placeholder="Time of day caught"
@@ -45,7 +45,7 @@
         <button class="btn btn-primary" type="submit">
           <i class="fas fa-edit"></i> Submit
         </button>
-        <a href="/characters" class="btn btn-warning">
+        <a href="/fishs" class="btn btn-warning">
           <i class="fas fa-undo"></i> Cancel
         </a>
       </form>
@@ -56,4 +56,4 @@
 
 
 
-<!--<%- include ../partials/footer.ejs %>-->
+<%- include ../partials/footer.ejs %>

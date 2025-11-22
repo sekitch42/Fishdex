@@ -1,28 +1,18 @@
 //mongodb schema to model fishdex 
-const mongoose = require('mongoose');
-const fishSchema = new mongoose.Schema({
+let mongoose = require('mongoose');
+let fishModel = new mongoose.Schema({
 
-  fishName: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  location: {
-    type: String,
-    trim: true,
-  },
-  bait: {
-    type: String,
-    trim: true,
-  },
-  time: {
-    type: String,
-    trim: true,
-  },
-  caught: {
-    type: Boolean,
-    default: false,
+  fishName: String,
+  location: String,
+  bait: String,
+  time: String,
+  caught: Boolean,
+},
+  {
+    collection: "fishs"
   }
-});
+);
 
-module.exports = mongoose.model("Fish", fishSchema);
+const Fish = mongoose.model("Fish", fishModel);
+
+module.exports = Fish;
