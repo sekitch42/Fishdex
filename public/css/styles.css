@@ -1,0 +1,124 @@
+
+
+/* linear gradient background */
+body.fishdex-body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Press Start 2P", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* ONLY the gradient — no second layer */
+  background: linear-gradient(180deg, #194884 0%, #1a5c90 40%, #1d759b 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*nav bar with pizxel font and logo */
+.pixel-nav {
+  background: #1a2a49;
+  padding: 15px 20px;   
+  font-family: "Press Start 2P", monospace;
+}
+
+.pixel-logo {
+  font-size: 29px;
+  font-weight: bold;
+  color: #ffffff !important;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0 0;
+}
+
+/* nav links */
+.pixel-nav .nav-link {
+  position: relative;
+  color: #ffffff !important;
+  font-size: 16px;
+  margin-left: 20px;
+  transition: 0.2s ease;
+  text-decoration: none;
+  padding-left: 28px; 
+}
+
+
+/* Hover effect using arrow asset I drew */
+.pixel-nav .nav-link:hover::before {
+  content: "";
+  position: absolute;
+  left: -10px;                      
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;                       
+  height: 22px;
+  background-image: url("/img/filled-arrow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* mobile hamburger bootstrap*/
+.navbar-toggler {
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.navbar-toggler-icon {
+  background-image: none;
+  width: 24px;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 6px 0 rgb(255, 255, 255), 0 12px 0 rgb(255, 255, 255);
+}
+
+
+/* Positioning for logo gif (own asset) */
+.hero-gif {
+  display: block;
+  margin: -45px auto 0 auto;  
+  width: 100%;
+  max-width: 750px;
+  image-rendering: pixelated;
+}
+
+/* animation only shows on hover */
+.hover-gif {
+  width: 100%;
+  max-width: 650px;
+  image-rendering: pixelated;
+}
+
+/* main hero button*/
+.get-btn {
+  font-family: "Press Start 2P", monospace;
+  background: #1a2a49;
+  color: #fff;
+  border: 3px solid #003344;
+  padding: 8px 6px;
+  border-radius: 10px;
+  margin-top: -100px !important;
+  transition: 0.2s ease;
+}
+
+/* current basic hover action might change in the future */
+.get-btn:hover {
+  background: #1a2a49;
+  transform: scale(1.03);
+  color: #fff;
+}
+
+/* footer design */
+.fishdex-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 40, 70, 0.9); 
+  padding-top: 20px;   
+  padding-bottom: 2px; 
+  padding-right: 30px;  
+  
+  font-family: "Press Start 2P";
+  font-size: 0.6rem;
+  color: #eafaff;
+  text-align: right;   
+}
+

@@ -1,0 +1,59 @@
+<!--<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %> -->
+<!-- content for adding fish -->
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <h1><%= title %></h1>
+
+      <form class="form" method="post">
+        <div class="form-group">
+          <label for="characterNameTextField">Fish</label>
+          <input type="text" class="form-control"
+          id="characterNameTextField"
+          placeholder="Fish"
+          name="fishName" required>
+        </div>
+        <div class="form-group">
+          <label for="classLevelTextField">Location</label>
+          <input type="text" class="form-control"
+          id="classLevelTextField"
+          placeholder="Location"
+          name="classLevel" required>
+        </div>
+        <div class="form-group">
+          <label for="baitTextField">Bait</label>
+          <input type="text" class="form-control"
+          id="baitTextField"
+          placeholder="Bait Used"
+          name="bait" required>
+        </div>
+        <div class="form-group">
+          <label for="raceTextField">Time</label>
+          <input type="text" class="form-control"
+          id="timeTextField"
+          placeholder="Time of day caught"
+          name="time" required>
+        </div>
+        <div class="form-check">
+          <label for="caughtCheck">Caught?</label>
+          <input type="checkbox" class="form-check-input"
+          id="caughtCheck"
+          name="caught" required>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">
+          <i class="fas fa-edit"></i> Submit
+        </button>
+        <a href="/characters" class="btn btn-warning">
+          <i class="fas fa-undo"></i> Cancel
+        </a>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<!--<%- include ../partials/footer.ejs %>-->
