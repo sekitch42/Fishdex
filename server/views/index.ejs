@@ -1,102 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FISHDEx</title>
-
-  <link rel="icon" type="image/png" href="/img/fishdex-icon.png">
-
-
-  <!-- Retro Pixel Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap CSS -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-
-  <!-- Your custom CSS -->
-  <link rel="stylesheet" href="/css/styles.css" />
-</head>
-
+<%- include ./partials/header.ejs %>
+<%- include ./partials/main_nav.ejs %>
 <body class="fishdex-body">
-
-
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg pixel-nav">
-    <div class="container-fluid">
-
-      <!-- brand logo + text -->
-      <a class="navbar-brand pixel-logo" href="/home">
-        <!-- small logo icon -->
-        <img src="/img/fishdex-icon.png" alt="Fishdex icon"
-             style="height:30px; margin-right:8px;">
-        FISHDEx
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-          <li class="nav-item">
-            <a class="nav-link" href="/home">Home</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="/fish">Fish</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="/about">About</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-
-        </ul>
-      </div>
-
-    </div>
-  </nav>
-
-  <!-- MAIN CONTENT -->
+  <!-- main page -->
   <main class="container text-center mt-5">
     <img src="/img/fishdex-title.png"
       data-animated="/img/fishdex-title.gif"
       data-static="/img/fishdex-title.png"
       alt="Fishdex title"
       class="hero-gif hover-gif">
-
-
-
+<!-- hero button -->
     <div class="mt-4">
       <a href="/fishdex" class="btn btn-lg get-btn">Get Started!</a>
     </div>
   </main>
-
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   document.querySelectorAll('.hover-gif').forEach(img => {
-
     img.addEventListener('mouseenter', () => {
       img.src = img.dataset.animated;
     });
-
     img.addEventListener('mouseleave', () => {
       img.src = img.dataset.static;
     });
-
   });
 </script>
-<footer class="fishdex-footer">
-  <p>© 2025 <strong>FISHDEx</strong> · Sarah Kitchen</p>
-</footer>
 </body>
 </html>
+<%- include ./partials/footer.ejs %>
