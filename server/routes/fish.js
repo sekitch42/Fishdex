@@ -57,11 +57,11 @@ router.post('/add',async(req,res,next)=>{
   try{
     // creates new Fish obejct using form fields
     let newFish = Fish({
-      "fishName":req.body.fishName,
-      "location":req.body.location,
-      "bait":req.body.bait,
-      "time":req.body.time,
-      "caught":req.body.caught,
+      fishName: req.body.fishName,
+      location: req.body.location,
+      bait: req.body.bait,
+      time: req.body.time,
+      caught: req.body.caught === "true",
     });
     // saves new entry to database
     Fish.create(newFish).then(()=>{
@@ -110,7 +110,7 @@ router.post('/edit/:id',async(req,res,next)=>{
       location: req.body.location,
       bait: req.body.bait,
       time: req.body.time,
-      caught: req.body.caught,
+      caught: req.body.caught === "true",
     });
 
     // updates doc by ID

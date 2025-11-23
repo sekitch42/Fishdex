@@ -58,7 +58,8 @@
           <input type="checkbox" class="form-check-input"
           id="caughtCheck"
           name="caught"
-          value="<%= Fish.caught%>">
+          value="true"
+          <%= Fish.caught ? 'checked': '' %>>
         </div>
 
         <br>
