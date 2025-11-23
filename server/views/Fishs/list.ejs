@@ -1,54 +1,63 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/main_nav.ejs %>
 
-<!--Main content-->
-<main class="container">
-  <div class="row">
-    <div class="offset-md-1 col-md-10">
-      <h1><%= title %></h1>
-        <a href="/fishs/add" class="btn btn-primary" role="button">
-          <i class="fas fa-plus-circle"></i> Add a Fish
-        </a>
-    
-        <table class="table table-bordered table-striped table-hover">
-          <thead>
-            <tr class="d-flex">
-              <th class="text-center col-2">Fish</th>
-              <th class="text-center col-2">Location</th>
-              <th class="text-center col-2">Bait</th>
-              <th class="text-center col-2">Time</th>
-              <th class="text-center col-1">Caught</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% for(let count=0; count<FishList.length;count++) { %>
-              <tr class="d-flex">
-                <td class="text-center col-2"><%= FishList[count].fishName %></td>
-                <td class="text-center col-2"><%= FishList[count].location %></td>
-                <td class="text-center col-2"><%= FishList[count].bait %></td>
-                <td class="text-center col-2"><%= FishList[count].time %></td>
-                <td class="text-center col-1"><%= FishList[count].caught %></td>
+<main class="container py-4">
 
-                <td class="text-center col-2">
-                <a href="/fishs/edit/<%= FishList[count]._id %>"
-                   class="btn btn-primary btn-sm me-2">
-                  <i class="fas fa-pencil-alt"></i> Edit
-                </a>
+  <h1 class="mb-4 fw-bold"><%= title %></h1>
 
-                <a href="/fishs/delete/<%= FishList[count]._id %>"
-                   class="btn btn-danger btn-sm"
-                   onclick="return confirm('Release this fish?');">
-                  <i class="fas fa-trash-alt"></i> Delete
-                </a>
-                </td>  
-                          
-              </tr>
-            <% } %>
-          </tbody>            
-        </table>
-    </div>
+  <!-- Add button -->
+  <a href="/fishs/add" class="btn btn-primary mb-3">
+    <i class="fas fa-plus-circle"></i> Add a Fish
+  </a>
+
+  <!-- Responsive table container -->
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle text-center">
+
+      <thead class="table-dark">
+        <tr>
+          <th>Fish</th>
+          <th>Location</th>
+          <th>Bait</th>
+          <th>Time</th>
+          <th>Caught?</th>
+          <th style="width: 180px;">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% FishList.forEach(fish => { %>
+          <tr>
+            <td><%= fish.fishName %></td>
+            <td><%= fish.location %></td>
+            <td><%= fish.bait %></td>
+            <td><%= fish.time %></td>
+            <td>
+              <% if (fish.caught) { %>
+                <span class="badge bg-success">Yes</span>
+              <% } else { %>
+                <span class="badge bg-secondary">No</span>
+              <% } %>
+            </td>
+
+            <td>
+              <a href="/fishs/edit/<%= fish._id %>" class="btn btn-primary btn-sm me-2">
+                <i class="fas fa-pencil-alt"></i> Edit
+              </a>
+
+              <a href="/fishs/delete/<%= fish._id %>"
+                 class="btn btn-danger btn-sm"
+                 onclick="return confirm('Release this fish?');">
+                <i class="fas fa-trash-alt"></i> Delete
+              </a>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+
+    </table>
   </div>
+
 </main>
 
 <%- include ../partials/footer.ejs %>
-

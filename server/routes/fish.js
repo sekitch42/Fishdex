@@ -18,7 +18,7 @@ router.get('/', async (req, res, next) => {
     const FishList = await Fish.find();
 
     res.render('Fishs/list', {
-      title: 'Fissh',
+      title: 'Fish',
       FishList: FishList
     })
 
