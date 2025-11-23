@@ -13,13 +13,12 @@ body.fishdex-body {
   background-attachment: fixed;
 }
 
-/*nav bar with pizxel font and logo */
+/*nav bar with pixel font and logo */
 .pixel-nav {
   background: #1a2a49;
   padding: 15px 20px;   
   font-family: "Press Start 2P", monospace;
 }
-
 .pixel-logo {
   font-size: 29px;
   font-weight: bold;
@@ -41,7 +40,6 @@ body.fishdex-body {
   padding-left: 28px; 
 }
 
-
 /* Hover effect using arrow asset I drew */
 .pixel-nav .nav-link:hover::before {
   content: "";
@@ -60,7 +58,6 @@ body.fishdex-body {
 .navbar-toggler {
   border: 2px solid rgb(255, 255, 255);
 }
-
 .navbar-toggler-icon {
   background-image: none;
   width: 24px;
@@ -121,4 +118,41 @@ body.fishdex-body {
   color: #eafaff;
   text-align: right;   
 }
+
+/* pixel border style */
+.poke-border {
+  border: 9px double #000;
+}
+.poke-font {
+  font-family: "Press Start 2P", monospace;
+  font-size: 12px;
+}
+.table .btn {
+  border: 2px solid #000;
+  font-size: 10px;
+  box-shadow: inset -1px -1px 0 #000;
+}
+
+.add-fish-btn {
+  border: 2px solid #000;
+  font-size: 15px;
+  font-family: "Press Start 2P", monospace;
+  padding: 10px 20px;
+  background: #ffffff;
+  color: #000000;
+  box-shadow: inset -1px -1px 0 #000;
+}
+.table-responsive {
+  margin-top: 80px; 
+}
+.poke-border thead th {
+  letter-spacing: 1px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.table td,
+.table th {
+  padding-right: 8px !important;
+}
+
 
