@@ -6,14 +6,14 @@ body.fishdex-body {
   min-height: 100vh;
   font-family: "Press Start 2P", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  /* ONLY the gradient — no second layer */
+  /* ONLY the gradient no second layer */
   background: linear-gradient(180deg, #194884 0%, #1a5c90 40%, #1d759b 100%);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-/*nav bar with pixel font and logo */
+/* nav bar with pixel font and logo */
 .pixel-nav {
   background: #1a2a49;
   padding: 15px 20px;   
@@ -142,14 +142,20 @@ body.fishdex-body {
   color: #000000;
   box-shadow: inset -1px -1px 0 #000;
 }
+
+/* adjusts positioning of the table */
 .table-responsive {
   margin-top: 80px; 
 }
+
+/* makes the top row more distinct and with the pokemon style */ 
 .poke-border thead th {
   letter-spacing: 1px;
   font-size: 15px;
   text-transform: uppercase;
 }
+
+/* trying to remove extra space from the right of each cell IN PROGRESS NEEDS FIXING */
 .table td,
 .table th {
   padding-right: 8px !important;

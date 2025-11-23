@@ -13,12 +13,10 @@ router.get('/home', function(req, res, next) {
 });
 
 
-
+// error page as a placeholder for about and login
 router.get('/about', function(req, res, next) {
   res.render('error', { title: 'About' });
 });
-
-// get fish page
 router.get('/login', function(req, res, next) {
   res.render('error', { title: 'Login' });
 });

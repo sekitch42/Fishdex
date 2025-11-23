@@ -1,38 +1,29 @@
 // server.js (project root)
+
+// loads env variables from .env file
 require('dotenv').config();
 
-/*
-Create, Read, Update, Delete --> CRUD Operation
-*/
+
+/* creats http server, connects to express app, handles configuring for port and basic server errors */
 var app = require('./server/config/app');
 var debug = require('debug')('fishdex:server');
 var http = require('http');
 
-/**
- * Get port from environment and store in Express.
- */
+/* gets port from environment and store in express*/
 
 var port = normalizePort(process.env.PORT || '5000');
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
-
+/* create HTTP server*/
 var server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+/* listen on provided port on all network interfaces */
 
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-/**
- * Normalize a port into a number, string, or false.
- */
-
+/* Normalize a port into a number, string, or false */
 function normalizePort(val) {
   var port = parseInt(val, 10);
 
@@ -49,15 +40,11 @@ function normalizePort(val) {
   return false;
 }
 
-/**
- * Event listener for HTTP server "error" event.
- */
-
+/* event listener for HTTP server "error" event */
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
   }
-
   var bind = typeof port === 'string'
     ? 'Pipe ' + port
     : 'Port ' + port;
@@ -77,10 +64,7 @@ function onError(error) {
   }
 }
 
-/**
- * Event listener for HTTP server "listening" event.
- */
-
+/* event listener for HTTP server "listening" event */
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'

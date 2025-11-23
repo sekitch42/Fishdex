@@ -21,6 +21,8 @@ mongoDB.on('error', console.error.bind(console,'Connection error'));
 mongoDB.once('open',()=>{
   console.log('Connected to the MongoDB');
 })
+
+
 // view engines
 app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "ejs");

@@ -1,12 +1,17 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/main_nav.ejs %> 
+
 <!-- content for adding fish -->
 <div class="container">
   <div class="row">
+
+    <!-- center column for form -->
     <div class="offset-md-3 col-md-6">
       <h1><%= title %></h1>
 
+      <!-- form for submitting new data to the POST /fishs/add route -->
       <form class="form" method="post">
+        <!-- fish name field -->
         <div class="form-group">
           <label for="fishNameTextField">Fish</label>
           <input type="text" class="form-control"
@@ -14,6 +19,7 @@
           placeholder="Fish"
           name="fishName" required>
         </div>
+        <!-- location field -->
         <div class="form-group">
           <label for="locationTextField">Location</label>
           <input type="text" class="form-control"
@@ -21,6 +27,8 @@
           placeholder="Location"
           name="location" required>
         </div>
+
+        <!-- bait field -->
         <div class="form-group">
           <label for="baitTextField">Bait</label>
           <input type="text" class="form-control"
@@ -28,6 +36,8 @@
           placeholder="Bait Used"
           name="bait" required>
         </div>
+
+        <!-- time of day field -->
         <div class="form-group">
           <label for="timeTextField">Time</label>
           <input type="text" class="form-control"
@@ -35,6 +45,8 @@
           placeholder="Time of day caught"
           name="time" required>
         </div>
+
+        <!-- caught true/false checkbox field -->
         <div class="form-check">
           <label for="caughtCheck">Caught?</label>
           <input type="checkbox" class="form-check-input"
@@ -42,18 +54,20 @@
           name="caught" 
           value="true">
         </div>
+
         <br>
+        <!-- submit button -->
         <button class="add-fish-btn" type="submit">
            Submit
         </button>
+        <!-- cancel button to return to fish list -->
         <a href="/fishs" class="btn add-fish-btn">
           Cancel
         </a>
+
       </form>
     </div>
   </div>
 </div>
-
-
 
 <%- include ../partials/footer.ejs %>
