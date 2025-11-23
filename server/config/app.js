@@ -11,7 +11,13 @@ let indexRouter = require("../routes/index");
 let fishRouter = require("../routes/fish");
 
 let app = express();
-
+// Test DB Connection
+mongoose.connect(DB.URI);
+let mongoDB = mongoose.connection;
+mongoDB.on('error', console.error.bind(console,'Connection error'));
+mongoDB.once('open',()=>{
+  console.log('Connected to the MongoDB');
+})
 // view engines
 app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "ejs");
