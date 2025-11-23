@@ -14,14 +14,13 @@ router.get('/home', function(req, res, next) {
 
 
 
-/* placeholders for future // get about page
 router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About' });
+  res.render('error', { title: 'About' });
 });
 
 // get fish page
 router.get('/login', function(req, res, next) {
-  res.render('index', { title: 'Login' });
-}); */
+  res.render('error', { title: 'Login' });
+});
 
 module.exports = router;

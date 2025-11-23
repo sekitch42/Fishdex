@@ -11,6 +11,9 @@ let indexRouter = require("../routes/index");
 let fishRouter = require("../routes/fish");
 
 let app = express();
+
+app.use(express.static(path.join(__dirname, '../public')));
+
 // Test DB Connection
 mongoose.connect(DB.URI);
 let mongoDB = mongoose.connection;
@@ -35,6 +38,26 @@ app.use(express.json());
 app.use("/", indexRouter);
 app.use("/fishs", fishRouter);
 
+// 404 handler – when no route matched
+app.use((req, res, next) => {
+  res.status(404);
+  res.render("error", {
+    title: "404 - Not Found",
+    message: "That page reeled in nothing…",
+    error: {}
+  });
+});
+
+// general error handler
+app.use((err, req, res, next) => {
+  console.error(err); 
+  res.status(err.status || 500);
+  res.render("error", {
+    title: "Server Error",
+    message: err.message || "oops.",
+    error: err
+  });
+});
 
 
 module.exports = app;
